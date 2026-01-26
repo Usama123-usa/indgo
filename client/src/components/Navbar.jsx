@@ -53,6 +53,12 @@ const Navbar = () => {
                         <NavLink to="/projects" className={getLinkClasses} onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
                         <NavLink to="/media" className={getLinkClasses} onClick={() => setIsMenuOpen(false)}>Media</NavLink>
                         <NavLink to="/contact" className={getLinkClasses} onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
+                        <div className="mt-4 pt-4 border-t border-indigo-100/50">
+                            <Link to="/contact" className="flex items-center justify-center gap-2 bg-deep-indigo hover:bg-primary text-white text-sm font-medium py-3 px-6 rounded-lg transition-all shadow-lg shadow-indigo-900/10" onClick={() => setIsMenuOpen(false)}>
+                                Partner With Us
+                                <span className="material-symbols-outlined text-sm">handshake</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             )}

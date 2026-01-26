@@ -25,9 +25,6 @@ const Footer = () => {
                                 <span className="material-symbols-outlined text-xl">share</span>
                             </a>
                         </div>
-                        <p className="text-gray-500 text-sm mt-2 font-medium whitespace-nowrap">
-                            Office # 203, 2nd Floor, Al-Hafeez Heights, Gulberg III, Lahore, Pakistan
-                        </p>
                     </div>
                     <div>
                         <h4 className="font-bold text-deep-indigo mb-6">Solutions</h4>
