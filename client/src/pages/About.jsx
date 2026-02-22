@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
     return (
         <div className="bg-background-light font-display text-text-main antialiased overflow-x-hidden selection:bg-secondary selection:text-white">
+            <Helmet>
+                <title>About INDIGOST Group | Pakistan's Solar & EV Pioneers</title>
+                <meta name="description" content="Established in 2015, INDIGOST Group is a leader in Engineering, Procurement, and Construction (EPC) for solar energy and EV charging infrastructure in Pakistan." />
+            </Helmet>
             {/* Hero Section */}
             <div className="relative w-full">
                 <div className="flex min-h-[560px] flex-col gap-6 bg-cover bg-center items-center justify-center p-4 relative" style={{ backgroundImage: 'linear-gradient(rgba(30, 27, 75, 0.8) 0%, rgba(16, 185, 129, 0.2) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpHGWgcqdR0VBz0MzHq0jrbb-yf5kbk6Bdx8VFG78r_sVtV5QMUMX78m4PpNH3srn_Bt_ewVsZbN2gXwlcC-V1Dx32hcDJ1JYdQ92jaHfDLyKOruDAPjgvZRZkeqNe3DHzYghyTZ89mrS0Izzp2pou_Gz5xKieiT3q8d1SWTF3FXRM5JPKmHXKlz4HTFvkjuJMM4_SfXQA40DQT2Ik1QS6xtnkgxczbwxTU2xbynRnVP1j7DuAUcLb9xX3bW-Qd_R79Y8Zc3S3sFg")' }}>
@@ -99,14 +104,40 @@ const About = () => {
                         </div>
 
                         {/* 2024 */}
+                        <div className="relative flex flex-col md:flex-row items-center mb-16">
+                            <div className="md:w-1/2 hidden md:block"></div>
+                            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 size-4 bg-accent rounded-full border-4 border-white z-10 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                            <div className="md:w-1/2 flex justify-start md:pl-12 w-full pl-8">
+                                <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent md:border-l-0 md:border-r-4 max-w-md">
+                                    <span className="text-accent font-bold text-lg">2024</span>
+                                    <h4 className="text-xl font-bold mb-2">Hybrid Revolution</h4>
+                                    <p className="text-sm text-indigo-700">Introducing hybrid solar + storage and driving industries toward complete carbon neutrality.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* 2025 */}
+                        <div className="relative flex flex-col md:flex-row items-center mb-16">
+                            <div className="md:w-1/2 flex justify-start md:justify-end md:pr-12 w-full pl-8 md:pl-0">
+                                <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent max-w-md text-left md:text-right">
+                                    <span className="text-accent font-bold text-lg">2025</span>
+                                    <h4 className="text-xl font-bold mb-2">BESS Integration</h4>
+                                    <p className="text-sm text-indigo-700">Introduced Battery Energy Storage Systems (BESS) to provide seamless power backup and stability.</p>
+                                </div>
+                            </div>
+                            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 size-4 bg-accent rounded-full border-4 border-white z-10 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                            <div className="md:w-1/2 hidden md:block"></div>
+                        </div>
+
+                        {/* 2026 */}
                         <div className="relative flex flex-col md:flex-row items-center">
                             <div className="md:w-1/2 hidden md:block"></div>
                             <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 size-4 bg-accent rounded-full border-4 border-white z-10 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
                             <div className="md:w-1/2 flex justify-start md:pl-12 w-full pl-8">
                                 <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-accent md:border-l-0 md:border-r-4 max-w-md">
-                                    <span className="text-accent font-bold text-lg">2024 & Beyond</span>
-                                    <h4 className="text-xl font-bold mb-2">Hybrid Revolution</h4>
-                                    <p className="text-sm text-indigo-700">Introducing hybrid solar + storage and driving industries toward complete carbon neutrality.</p>
+                                    <span className="text-accent font-bold text-lg">2026</span>
+                                    <h4 className="text-xl font-bold mb-2">EV Revolution</h4>
+                                    <p className="text-sm text-indigo-700">Introducing next-gen EV charging stations to build the backbone of sustainable transportation.</p>
                                 </div>
                             </div>
                         </div>

@@ -1,8 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
     return (
         <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-text-main overflow-x-hidden relative">
+            <Helmet>
+                <title>Contact INDIGOST Group | Solar & EV Partnerships Pakistan</title>
+                <meta name="description" content="Get in touch with INDIGOST Group for EV charging station installations, industrial solar EPC, or BESS inquiries. Offices in Islamabad, Lahore, and Bahawalpur." />
+            </Helmet>
             <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary opacity-20 filter blur-[80px] animate-blob"></div>
             <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-80 h-80 rounded-full bg-secondary opacity-20 filter blur-[80px] animate-blob animation-delay-2000"></div>
 
@@ -96,7 +101,7 @@ const Contact = () => {
                         <div className="lg:col-span-6">
                             <div className="bg-white dark:bg-[#2e1065] p-8 md:p-10 rounded-3xl shadow-2xl shadow-indigo-200/50 dark:shadow-none border border-indigo-100 dark:border-white/5 relative overflow-hidden">
                                 <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary via-secondary to-primary"></div>
-                                <h3 className="text-2xl font-bold text-primary dark:text-white mb-2">Send us a message</h3>
+                                <h2 className="text-2xl font-bold text-primary dark:text-white mb-2">Send us a message</h2>
                                 <p className="text-indigo-600/70 dark:text-indigo-300 mb-8 text-sm">We typically reply within 2 hours during business hours.</p>
                                 <form className="flex flex-col gap-6" onSubmit={(e) => {
                                     e.preventDefault();
@@ -132,6 +137,7 @@ const Contact = () => {
                                                 <option value="ev-charging">EV Charging Installation</option>
                                                 <option value="solar-residential">Home Solar Solutions</option>
                                                 <option value="solar-commercial">Commercial Solar Projects</option>
+                                                <option value="bess">Battery Energy Storage Systems (BESS)</option>
                                                 <option value="dealership">Dealership Inquiry</option>
                                             </select>
                                             <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-indigo-400">

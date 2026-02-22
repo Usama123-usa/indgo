@@ -40,6 +40,8 @@ const Hero = () => {
                 {sliderData.map((data, index) => (
                     <div
                         key={index}
+                        role="img"
+                        aria-label={data.badge}
                         className={`slide-fade ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
                         style={{ backgroundImage: `url('${data.bg}')` }}
                     ></div>
@@ -67,8 +69,8 @@ const Hero = () => {
                         {slide.p}
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                        <Link to="/products" className="bg-accent hover:bg-accent-hover text-white h-14 px-8 rounded-lg font-bold text-base transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:-translate-y-1 flex items-center gap-2 group flex justify-center items-center">
-                            Find a Station
+                        <Link to="/find-station" className="bg-accent hover:bg-accent-hover text-white h-14 px-8 rounded-lg font-bold text-base transition-all shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:-translate-y-1 flex items-center gap-2 group flex justify-center items-center">
+                            Find an EV Station
                             <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">location_on</span>
                         </Link>
                         <Link to="/services" className="bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/20 text-white h-14 px-8 rounded-lg font-bold text-base transition-all flex items-center gap-2 hover:border-accent/50 flex justify-center items-center">
@@ -92,14 +94,14 @@ const Hero = () => {
                         <div className="flex justify-between items-start mb-6">
                             <div>
                                 <h3 className="text-white font-bold text-lg">Super Charger V3</h3>
-                                <p className="text-indigo-300 text-xs">Islamabad M-2 Interchange</p>
+                                <p className="text-indigo-300 text-xs">Installed at Motorway M-2 </p>
                             </div>
                             <div className="px-2 py-1 rounded bg-green-500/20 text-green-300 text-xs font-bold border border-green-500/30">
                                 AVAILABLE
                             </div>
                         </div>
                         <div className="flex items-end gap-2 mb-2">
-                            <span className="text-5xl font-display font-bold text-white">120</span>
+                            <span className="text-5xl font-display font-bold text-white">240</span>
                             <span className="text-xl text-accent font-bold mb-2">kW</span>
                         </div>
                         <div className="w-full bg-indigo-900/50 rounded-full h-2 mb-4">
@@ -108,7 +110,7 @@ const Hero = () => {
                         <div className="grid grid-cols-2 gap-4 text-center">
                             <div className="bg-indigo-900/30 rounded-lg p-2 col-span-2">
                                 <span className="material-symbols-outlined text-white mb-1">timer</span>
-                                <p className="text-indigo-200 text-xs">15 mins to 80%</p>
+                                <p className="text-indigo-200 text-xs">15 mins to 100%</p>
                             </div>
                         </div>
                     </div>

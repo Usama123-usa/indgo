@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import projectUthalDho from '../assets/project_uthal_dho.png';
 
 const Projects = () => {
@@ -378,6 +379,10 @@ const Projects = () => {
 
     return (
         <div className="bg-background-light text-text-main font-display overflow-x-hidden selection:bg-secondary/30">
+            <Helmet>
+                <title>Solar & EV Projects in Pakistan | INDIGOST Case Studies</title>
+                <meta name="description" content="Explore our nationwide impact: 2.3MW PV solar installations, UNICEF-funded BESS projects, and motorway EV charging hubs across Pakistan." />
+            </Helmet>
             <main className="flex flex-col w-full min-h-screen">
                 {/* Hero Section */}
                 <section className="relative w-full pt-0 pb-12 md:pt-0 md:pb-16 px-4 overflow-hidden bg-background-light">
@@ -428,6 +433,8 @@ const Projects = () => {
                                     {/* Image Section */}
                                     <div className="w-full md:w-2/5 relative overflow-hidden min-h-[300px]">
                                         <div
+                                            role="img"
+                                            aria-label={project.title}
                                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                                             style={{ backgroundImage: `url("${project.image}")` }}
                                         ></div>
@@ -447,9 +454,9 @@ const Projects = () => {
                                                 <span className="w-1.5 h-1.5 bg-secondary rounded-full mx-2"></span>
                                                 <span>{project.date}</span>
                                             </div>
-                                            <h3 className="text-2xl md:text-3xl font-bold text-deep-indigo group-hover:text-primary transition-colors">
+                                            <h2 className="text-2xl md:text-3xl font-bold text-deep-indigo group-hover:text-primary transition-colors">
                                                 {project.title}
-                                            </h3>
+                                            </h2>
                                         </div>
 
                                         <p className="text-gray-800 leading-relaxed text-sm md:text-base">

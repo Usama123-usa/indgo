@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const products = [
     {
@@ -110,6 +111,10 @@ const Products = () => {
 
     return (
         <div className="bg-background-light font-display text-text-main dark:text-white transition-colors duration-300">
+            <Helmet>
+                <title>EV Charging Stations & Solar Products Pakistan | INDIGOST</title>
+                <meta name="description" content="Browse INDIGOST's range of premium EV charging stations, solar batteries, BESS solutions and industrial solar components designed for the Pakistan market." />
+            </Helmet>
             <main className="relative flex flex-col items-center w-full min-h-screen pb-20 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-radial from-primary/10 to-transparent opacity-70 pointer-events-none -z-10"></div>
                 <div className="absolute top-[10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-secondary/10 blur-[100px] pointer-events-none -z-10"></div>
@@ -126,8 +131,8 @@ const Products = () => {
                                 </span>
                             </div>
                             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight leading-tight mb-6">
-                                <span className="text-gradient bg-gradient-to-r from-primary via-primary-light to-secondary text-transparent bg-clip-text">Focus Products</span><br />
-                                <span className="text-text-main dark:text-white">Section</span>
+                                <span className="text-gradient bg-gradient-to-r from-primary via-primary-light to-secondary text-transparent bg-clip-text">Premium Energy</span><br />
+                                <span className="text-text-main dark:text-white">Solutions</span>
                             </h1>
                             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
                                 Pioneering the future of mobility and energy in Pakistan. Discover our state-of-the-art EV Charging infrastructure and industrial solar solutions designed for maximum efficiency.

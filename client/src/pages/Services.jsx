@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
     return (
         <div className="bg-background-light font-display text-text-main antialiased overflow-x-hidden relative">
+            <Helmet>
+                <title>Solar & EV Services in Pakistan | INDIGOST Group</title>
+                <meta name="description" content="Explore our comprehensive energy services: EV station installation, industrial solar integration, and 24/7 smart maintenance for BESS and PV systems in Pakistan." />
+            </Helmet>
             <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px]"></div>
                 <div className="absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px]"></div>

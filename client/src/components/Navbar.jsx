@@ -12,13 +12,9 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 left-0 w-full z-50 glass-nav border-b border-indigo-100 transition-all duration-300 shadow-sm">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
+                <div className="flex items-center justify-between h-24">
                     <Link to="/" className="flex items-center gap-3 group cursor-pointer">
-                        <img src="./images/logo.png" alt="INDIGOST Logo" className="h-12 w-auto" />
-                        <div>
-                            <span className="text-xl font-display font-semibold tracking-tight text-deep-indigo leading-none block">INDIGOST</span>
-                            <span className="text-[10px] font-bold tracking-widest text-accent uppercase block">Group of Companies</span>
-                        </div>
+                        <img src="/images/logo.png" alt="INDIGOST Logo" className="h-[120px] w-auto transition-all" />
                     </Link>
                     <div className="hidden md:flex items-center gap-8">
                         <NavLink to="/" className={getLinkClasses}>Home</NavLink>

@@ -8,8 +8,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-3">
-                            <img src="./images/logo.png" alt="INDIGOST Logo" className="h-8 w-auto" />
-                            <span className="text-xl font-bold text-deep-indigo">INDIGOST</span>
+                            <img src="/images/logo.png" alt="INDIGOST Logo" className="h-[120px] w-auto" />
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed">
                             Pioneering Pakistan's transition to sustainable energy. We empower businesses and individuals with smart EV and solar technologies.
@@ -29,7 +28,7 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold text-deep-indigo mb-6">Solutions</h4>
                         <ul className="space-y-4">
-                            <li><Link className="text-gray-500 hover:text-primary text-sm transition-colors" to="/products">EV Charging Stations</Link></li>
+                            <li><Link className="text-gray-500 hover:text-primary text-sm transition-colors" to="/find-station">EV Charging Stations</Link></li>
                             <li><Link className="text-gray-500 hover:text-primary text-sm transition-colors" to="/services">Industrial Solar</Link></li>
                             <li><Link className="text-gray-500 hover:text-primary text-sm transition-colors" to="/products">Home Energy Storage</Link></li>
                             <li><Link className="text-gray-500 hover:text-primary text-sm transition-colors" to="/services">Fleet Management</Link></li>

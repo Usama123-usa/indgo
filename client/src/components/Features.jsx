@@ -9,7 +9,7 @@ const Features = () => {
                     <div>
                         <h2 className="text-4xl font-display font-bold text-deep-indigo mb-6">Why Choose <span className="text-primary">INDIGOST?</span></h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            We aren't just installing chargers; we are engineering an ecosystem. Designed specifically for the voltage fluctuations and environmental conditions of Pakistan.
+                            Indigost is a complete clean-energy solutions company delivering end-to-end services across solar power, energy storage, EV charging, and electrical infrastructure. We don’t just install systems — we design, integrate, commission, and support them for long-term performance and reliability.
                         </p>
                         <div className="space-y-6">
                             <div className="flex gap-4 group">
@@ -18,7 +18,7 @@ const Features = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold text-deep-indigo group-hover:text-primary transition-colors">Ultra-Fast Charging</h4>
-                                    <p className="text-gray-500 text-sm mt-1">120kW+ DC Fast Chargers on Motorways (M-2, M-1, M-5).</p>
+                                    <p className="text-gray-500 text-sm mt-1">240kW+ DC Fast Chargers on Motorways M-2.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4 group">
@@ -27,7 +27,7 @@ const Features = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold text-deep-indigo group-hover:text-primary transition-colors">Green Energy Mix</h4>
-                                    <p className="text-gray-500 text-sm mt-1">Hybrid stations powered by solar, reducing grid dependency by 40%.</p>
+                                    <p className="text-gray-500 text-sm mt-1">Provide a hybrid solution according to the requirements of the client by reducing its dependency from grid.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4 group">
@@ -36,7 +36,7 @@ const Features = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-bold text-deep-indigo group-hover:text-primary transition-colors">24/7 Local Support</h4>
-                                    <p className="text-gray-500 text-sm mt-1">Dedicated Urdu & English support centers in Lahore and Karachi.</p>
+                                    <p className="text-gray-500 text-sm mt-1">Dedicated Urdu & English support centers in Lahore and Islamabad.</p>
                                 </div>
                             </div>
                         </div>

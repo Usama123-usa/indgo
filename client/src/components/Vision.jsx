@@ -19,16 +19,16 @@ const Vision = () => {
                         </div>
                         <h3 className="text-xl font-bold mb-3">Urban Densification</h3>
                         <p className="text-indigo-200 text-sm leading-relaxed">
-                            Deploying fast chargers every 5km in major metropolitan areas including Karachi, Lahore, and Islamabad.
+                            Deploying fast chargers every 5km in major metropolitan areas including Lahore, and Islamabad.
                         </p>
                     </div>
                     <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all group">
                         <div className="size-12 bg-accent rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-accent/30">
                             <span className="material-symbols-outlined text-white">add_road</span>
                         </div>
-                        <h3 className="text-xl font-bold mb-3">Highway Electrification</h3>
+                        <h3 className="text-xl font-bold mb-3">Motorway Electrification</h3>
                         <p className="text-indigo-200 text-sm leading-relaxed">
-                            Complete coverage of M-Line motorways and N-5 National Highway with ultra-fast charging hubs.
+                            Complete coverage of M-Line motorways and M-2 Motorway with ultra-fast charging hubs.
                         </p>
                     </div>
                     <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all group">

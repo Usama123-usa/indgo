@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import Projects from './pages/Projects';
 import Media from './pages/Media';
 import Contact from './pages/Contact';
+import FindStation from './pages/FindStation';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import { useEffect } from 'react';
@@ -30,7 +31,7 @@ function App() {
       <ScrollToTop />
       <div className="bg-background-light font-body text-text-dark overflow-x-hidden">
         <Navbar />
-        <main className="relative w-full min-h-screen flex flex-col pt-20">
+        <main className="relative w-full min-h-screen flex flex-col pt-24">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/index.html" element={<Home />} /> {/* Handle legacy ink */}
@@ -43,6 +44,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/media" element={<Media />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/find-station" element={<FindStation />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
           </Routes>
