@@ -208,7 +208,7 @@ const About = () => {
                             </div>
                             <div className="text-center">
                                 <h4 className="font-bold text-lg">Muhammad Azher Sardar</h4>
-                                <p className="text-sm text-accent font-medium">Chief Technology Officer (CTO)</p>
+                                <p className="text-sm text-accent font-medium"> Chief Technical Officer (CTO) </p>
                             </div>
                         </div>
                     </div>
