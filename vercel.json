@@ -1,10 +1,21 @@
 {
+    "functions": {
+        "api/**/*.js": {
+            "includeFiles": [
+                "company information.docx"
+            ]
+        }
+    },
     "rewrites": [
+        {
+            "source": "/chatbot/message",
+            "destination": "/api/chatbot/message"
+        },
         {
             "source": "/(.*)",
             "destination": "/index.html"
         }
     ],
-    "buildCommand": "cd client && npm install && npm run build",
+    "buildCommand": "npm run vercel-build",
     "outputDirectory": "client/dist"
 }

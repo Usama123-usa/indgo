@@ -186,7 +186,7 @@ const About = () => {
                     <div className="flex flex-wrap justify-center gap-16">
                         <div className="flex flex-col items-center gap-3">
                             <div className="size-32 rounded-full border-4 border-accent shadow-lg overflow-hidden">
-                                <img className="w-full h-full object-cover object-top" src="./images/aleem.jpeg" alt="Muhammad Aleem" />
+                                <img className="w-full h-full object-cover object-top" src="./images/aleem.jpeg" alt="Muhammad Aleem" width="832" height="1248" loading="lazy" decoding="async" />
                             </div>
                             <div className="text-center">
                                 <h4 className="font-bold text-lg">Muhammad Aleem</h4>
@@ -195,7 +195,7 @@ const About = () => {
                         </div>
                         <div className="flex flex-col items-center gap-3">
                             <div className="size-32 rounded-full border-4 border-accent shadow-lg overflow-hidden">
-                                <img className="w-full h-full object-cover object-top" src="./images/hammad.jpeg" alt="Muhammad Hammad Rafique" />
+                                <img className="w-full h-full object-cover object-top" src="./images/hammad.jpeg" alt="Muhammad Hammad Rafique" width="341" height="512" loading="lazy" decoding="async" />
                             </div>
                             <div className="text-center">
                                 <h4 className="font-bold text-lg">Muhammad Hammad Rafique</h4>
@@ -204,7 +204,7 @@ const About = () => {
                         </div>
                         <div className="flex flex-col items-center gap-3">
                             <div className="size-32 rounded-full border-4 border-accent shadow-lg overflow-hidden">
-                                <img className="w-full h-full object-cover object-center" src="./images/azher.jpeg" alt="Azher" />
+                                <img className="w-full h-full object-cover object-center" src="./images/azher.jpeg" alt="Azher" width="708" height="718" loading="lazy" decoding="async" />
                             </div>
                             <div className="text-center">
                                 <h4 className="font-bold text-lg">Muhammad Azher Sardar</h4>

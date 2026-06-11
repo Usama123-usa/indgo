@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const Media = () => {
-    const [activeTab, setActiveTab] = useState('All Media');
     const [playingVideo, setPlayingVideo] = useState(null);
     const [currentSlide, setCurrentSlide] = useState(0);
 

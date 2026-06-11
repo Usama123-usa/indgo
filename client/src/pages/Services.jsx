@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -42,7 +42,7 @@ const Services = () => {
                         <div className="order-1 lg:order-2 relative group">
                             <div className="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-2xl blur-2xl -z-10 group-hover:blur-3xl transition-all duration-700"></div>
                             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-white/60">
-                                <img alt="Solar panels and clean energy" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR2uiixiOgsrBo3WelLFeZbl8-ePx-ZkUvzmzMHCBHyg-YrfJ_tx2kTq6d-cp6YxwSVjcka-n3RtHCo-7_RvGWjKBIICHPPXXyaQLttwRPGMZd5DETIeNLxoull0GhCyH9tJzrp2WCCxcCEe3-E93Dwl3Z_AT1hiLLZgkNEf52PZLegO5SAdqbYnarBtoDaW3yAfkVHrkwOUlSOUYMJ1hkQPh27M10ZrZL38IGBqBBDblgHviu9dtSeomx4hQM-VKjGbcCHnpWjAU" />
+                                <img alt="Solar panels and clean energy" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR2uiixiOgsrBo3WelLFeZbl8-ePx-ZkUvzmzMHCBHyg-YrfJ_tx2kTq6d-cp6YxwSVjcka-n3RtHCo-7_RvGWjKBIICHPPXXyaQLttwRPGMZd5DETIeNLxoull0GhCyH9tJzrp2WCCxcCEe3-E93Dwl3Z_AT1hiLLZgkNEf52PZLegO5SAdqbYnarBtoDaW3yAfkVHrkwOUlSOUYMJ1hkQPh27M10ZrZL38IGBqBBDblgHviu9dtSeomx4hQM-VKjGbcCHnpWjAU" width="640" height="480" loading="lazy" decoding="async" />
                                 <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl text-white shadow-lg">
                                     <div className="flex items-center justify-between">
                                         <div>
@@ -179,7 +179,7 @@ const Services = () => {
                 <section className="w-full py-20 px-4">
                     <div className="max-w-[1280px] mx-auto relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/20">
                         <div className="absolute inset-0 z-0">
-                            <img alt="Abstract blurred background" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA_o-Sutec4MkxHDIAh_-p8Ord0tWmzYyWVQ1Sd_f-ZqiXmpx8INQJTh1_a2lvvfltNs9hpR3vppMb166PsQiGnkEn-kr6OQopa6yBqqWCqhuBKNpHAYyRZxdEhTsye0yIMNAetMtp1FxiC-KpNs_N_jIpddK1sXs1gkwbyENt0FkrZXngahz54JJvsN9ga4N8lJbs3pScyZ27UgRjWhzRXVp94U6PXu-XpL_eKWZayWtJTtw8Be6cbKSQO4MWthu4Oy3h2ym4yL8" />
+                            <img alt="Abstract blurred background" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA_o-Sutec4MkxHDIAh_-p8Ord0tWmzYyWVQ1Sd_f-ZqiXmpx8INQJTh1_a2lvvfltNs9hpR3vppMb166PsQiGnkEn-kr6OQopa6yBqqWCqhuBKNpHAYyRZxdEhTsye0yIMNAetMtp1FxiC-KpNs_N_jIpddK1sXs1gkwbyENt0FkrZXngahz54JJvsN9ga4N8lJbs3pScyZ27UgRjWhzRXVp94U6PXu-XpL_eKWZayWtJTtw8Be6cbKSQO4MWthu4Oy3h2ym4yL8" width="1280" height="720" loading="lazy" decoding="async" />
                             <div className="absolute inset-0 bg-background-dark/80 mix-blend-multiply"></div>
                             <div className="absolute inset-0 bg-gradient-to-r from-background-dark/95 via-primary/80 to-secondary/70"></div>
                         </div>

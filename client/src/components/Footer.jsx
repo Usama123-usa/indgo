@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-3">
-                            <img src="/images/logo.png" alt="INDIGOST Logo" className="h-[120px] w-auto" />
+                            <img src="/images/logo.png" alt="INDIGOST Logo" width="612" height="408" loading="lazy" decoding="async" className="h-[120px] w-auto" />
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed">
                             Pioneering Pakistan's transition to sustainable energy. We empower businesses and individuals with smart EV and solar technologies.
