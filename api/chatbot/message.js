@@ -1,4 +1,4 @@
-import { generateChatbotReply } from '../../client/server/services/geminiChatbotService.js';
+import { generateChatbotReply } from '../../client/server/services/openaiChatbotService.js';
 import { loadServerEnv } from '../../client/server/services/envService.js';
 
 loadServerEnv();
@@ -56,7 +56,7 @@ export default async function handler(req, res) {
       });
     }
 
-    if (error.code === 'MISSING_GEMINI_API_KEY') {
+    if (error.code === 'MISSING_OPENAI_API_KEY') {
       return sendJson(res, 500, {
         status: false,
         reply: 'Chatbot is not configured yet. Please contact our team for more details.',
@@ -70,7 +70,7 @@ export default async function handler(req, res) {
       });
     }
 
-    console.error('Vercel Gemini chatbot error:', error);
+    console.error('Vercel OpenAI chatbot error:', error);
     return sendJson(res, 502, {
       status: false,
       reply: 'Chatbot is temporarily unavailable. Please try again later or contact our team for more details.',

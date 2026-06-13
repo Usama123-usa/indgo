@@ -1,6 +1,6 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
-import { generateChatbotReply } from './services/geminiChatbotService.js';
+import { generateChatbotReply } from './services/openaiChatbotService.js';
 import { loadServerEnv } from './services/envService.js';
 
 loadServerEnv();
@@ -34,7 +34,7 @@ app.post(
         });
       }
 
-      if (error.code === 'MISSING_GEMINI_API_KEY') {
+      if (error.code === 'MISSING_OPENAI_API_KEY') {
         return res.status(500).json({
           status: false,
           reply: 'Chatbot is not configured yet. Please contact our team for more details.',
@@ -48,7 +48,7 @@ app.post(
         });
       }
 
-      console.error('Gemini chatbot error:', error);
+      console.error('OpenAI chatbot error:', error);
       return res.status(502).json({
         status: false,
         reply: 'Chatbot is temporarily unavailable. Please try again later or contact our team for more details.',
