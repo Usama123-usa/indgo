@@ -10,6 +10,10 @@
             "destination": "/api/chatbot/message"
         },
         {
+            "source": "/contact/message",
+            "destination": "/api/contact/message"
+        },
+        {
             "source": "/(.*)",
             "destination": "/index.html"
         }

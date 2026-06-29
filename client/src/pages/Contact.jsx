@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
+    const [form, setForm] = useState({ name: '', email: '', inquiryType: '', message: '' });
+    const [status, setStatus] = useState('idle'); // idle | loading | success | error
+    const [errorMsg, setErrorMsg] = useState('');
+
+    const handleChange = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('loading');
+        setErrorMsg('');
+        try {
+            const res = await fetch('/contact/message', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(form),
+            });
+            const data = await res.json();
+            if (data.status) {
+                setStatus('success');
+                setForm({ name: '', email: '', inquiryType: '', message: '' });
+            } else {
+                setStatus('error');
+                setErrorMsg(data.error || 'Something went wrong. Please try again.');
+            }
+        } catch {
+            setStatus('error');
+            setErrorMsg('Network error. Please check your connection and try again.');
+        }
+    };
+
     return (
         <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-text-main overflow-x-hidden relative">
             <Helmet>
@@ -133,18 +163,24 @@ const Contact = () => {
                                 <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary via-secondary to-primary"></div>
                                 <h2 className="text-2xl font-bold text-primary dark:text-white mb-2">Send us a message</h2>
                                 <p className="text-indigo-600/70 dark:text-indigo-300 mb-8 text-sm">We typically reply within 2 hours during business hours.</p>
-                                <form className="flex flex-col gap-6" onSubmit={(e) => {
-                                    e.preventDefault();
-                                    alert('Thank you for your inquiry! We will get back to you shortly.');
-                                    e.target.reset();
-                                }}>
+                                {status === 'success' ? (
+                                    <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
+                                        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                                            <span className="material-symbols-outlined text-4xl text-secondary">check_circle</span>
+                                        </div>
+                                        <h3 className="text-xl font-black text-primary dark:text-white">Inquiry Sent!</h3>
+                                        <p className="text-indigo-700/70 dark:text-indigo-300 text-sm max-w-xs">Thank you! We've received your message and sent a confirmation to your email. We'll reply within 2 hours.</p>
+                                        <button onClick={() => setStatus('idle')} className="mt-2 text-sm font-bold text-secondary underline underline-offset-2">Send another inquiry</button>
+                                    </div>
+                                ) : (
+                                <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                                     <label className="flex flex-col w-full">
                                         <span className="text-primary dark:text-indigo-200 text-sm font-semibold pb-2">Full Name</span>
                                         <div className="relative group">
                                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-indigo-400 group-focus-within:text-secondary transition-colors">
                                                 <span className="material-symbols-outlined text-[20px]">person</span>
                                             </div>
-                                            <input required className="form-input flex w-full rounded-xl text-primary dark:text-white border border-indigo-200 dark:border-white/20 bg-indigo-50/50 dark:bg-white/5 focus:border-secondary focus:ring-1 focus:ring-secondary h-14 placeholder:text-indigo-300/70 pl-11 pr-4 transition-colors" placeholder="e.g. Ahmed Khan" type="text" />
+                                            <input required name="name" value={form.name} onChange={handleChange} className="form-input flex w-full rounded-xl text-primary dark:text-white border border-indigo-200 dark:border-white/20 bg-indigo-50/50 dark:bg-white/5 focus:border-secondary focus:ring-1 focus:ring-secondary h-14 placeholder:text-indigo-300/70 pl-11 pr-4 transition-colors" placeholder="e.g. Ahmed Khan" type="text" />
                                         </div>
                                     </label>
                                     <label className="flex flex-col w-full">
@@ -153,7 +189,7 @@ const Contact = () => {
                                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-indigo-400 group-focus-within:text-secondary transition-colors">
                                                 <span className="material-symbols-outlined text-[20px]">mail</span>
                                             </div>
-                                            <input required className="form-input flex w-full rounded-xl text-primary dark:text-white border border-indigo-200 dark:border-white/20 bg-indigo-50/50 dark:bg-white/5 focus:border-secondary focus:ring-1 focus:ring-secondary h-14 placeholder:text-indigo-300/70 pl-11 pr-4 transition-colors" placeholder="e.g. ahmed@example.com" type="email" />
+                                            <input required name="email" value={form.email} onChange={handleChange} className="form-input flex w-full rounded-xl text-primary dark:text-white border border-indigo-200 dark:border-white/20 bg-indigo-50/50 dark:bg-white/5 focus:border-secondary focus:ring-1 focus:ring-secondary h-14 placeholder:text-indigo-300/70 pl-11 pr-4 transition-colors" placeholder="e.g. ahmed@example.com" type="email" />
                                         </div>
                                     </label>
                                     <label className="flex flex-col w-full">
@@ -162,8 +198,8 @@ const Contact = () => {
                                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-indigo-400 group-focus-within:text-secondary transition-colors">
                                                 <span className="material-symbols-outlined text-[20px]">category</span>
                                             </div>
-                                            <select required className="form-select flex w-full rounded-xl text-primary dark:text-white border border-indigo-200 dark:border-white/20 bg-indigo-50/50 dark:bg-white/5 focus:border-secondary focus:ring-1 focus:ring-secondary h-14 pl-11 pr-10 transition-colors appearance-none cursor-pointer">
-                                                <option disabled="" selected="" value="">Select a topic</option>
+                                            <select required name="inquiryType" value={form.inquiryType} onChange={handleChange} className="form-select flex w-full rounded-xl text-primary dark:text-white border border-indigo-200 dark:border-white/20 bg-indigo-50/50 dark:bg-white/5 focus:border-secondary focus:ring-1 focus:ring-secondary h-14 pl-11 pr-10 transition-colors appearance-none cursor-pointer">
+                                                <option value="">Select a topic</option>
                                                 <option value="ev-charging">EV Charging Installation</option>
                                                 <option value="solar-residential">Home Solar Solutions</option>
                                                 <option value="solar-commercial">Commercial Solar Projects</option>
@@ -177,13 +213,29 @@ const Contact = () => {
                                     </label>
                                     <label className="flex flex-col w-full">
                                         <span className="text-primary dark:text-indigo-200 text-sm font-semibold pb-2">Message</span>
-                                        <textarea required className="form-textarea flex w-full rounded-xl text-primary dark:text-white border border-indigo-200 dark:border-white/20 bg-indigo-50/50 dark:bg-white/5 focus:border-secondary focus:ring-1 focus:ring-secondary placeholder:text-indigo-300/70 p-4 resize-none transition-colors" placeholder="Tell us about your requirements (Location, Load, etc.)" rows="4"></textarea>
+                                        <textarea required name="message" value={form.message} onChange={handleChange} className="form-textarea flex w-full rounded-xl text-primary dark:text-white border border-indigo-200 dark:border-white/20 bg-indigo-50/50 dark:bg-white/5 focus:border-secondary focus:ring-1 focus:ring-secondary placeholder:text-indigo-300/70 p-4 resize-none transition-colors" placeholder="Tell us about your requirements (Location, Load, etc.)" rows="4"></textarea>
                                     </label>
-                                    <button className="mt-2 w-full bg-gradient-to-r from-primary to-indigo-800 hover:from-secondary hover:to-emerald-600 text-white h-14 rounded-xl font-bold text-base tracking-wide shadow-lg shadow-indigo-500/25 hover:shadow-green-500/40 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 group" type="submit">
-                                        <span>Send Inquiry</span>
-                                        <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">send</span>
+                                    {status === 'error' && (
+                                        <div className="flex items-center gap-2 text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm">
+                                            <span className="material-symbols-outlined text-[18px]">error</span>
+                                            {errorMsg}
+                                        </div>
+                                    )}
+                                    <button disabled={status === 'loading'} className="mt-2 w-full bg-gradient-to-r from-primary to-indigo-800 hover:from-secondary hover:to-emerald-600 disabled:opacity-60 disabled:cursor-not-allowed text-white h-14 rounded-xl font-bold text-base tracking-wide shadow-lg shadow-indigo-500/25 hover:shadow-green-500/40 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 group" type="submit">
+                                        {status === 'loading' ? (
+                                            <>
+                                                <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                                                <span>Sending...</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span>Send Inquiry</span>
+                                                <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">send</span>
+                                            </>
+                                        )}
                                     </button>
                                 </form>
+                                )}
                             </div>
                         </div>
                     </div>

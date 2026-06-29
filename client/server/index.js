@@ -1,6 +1,7 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
 import { generateChatbotReply } from './services/openaiChatbotService.js';
+import { sendContactEmail } from './services/contactEmailService.js';
 import { loadServerEnv } from './services/envService.js';
 
 loadServerEnv();
@@ -53,6 +54,26 @@ app.post(
         status: false,
         reply: 'Chatbot is temporarily unavailable. Please try again later or contact our team for more details.',
       });
+    }
+  },
+);
+
+app.post(
+  '/contact/message',
+  rateLimit({ windowMs: 60 * 1000, limit: 5, standardHeaders: true, legacyHeaders: false }),
+  async (req, res) => {
+    try {
+      await sendContactEmail(req.body || {});
+      res.json({ status: true });
+    } catch (error) {
+      if (error.code === 'MISSING_FIELDS') {
+        return res.status(400).json({ status: false, error: error.message });
+      }
+      if (error.code === 'MISSING_SMTP_CONFIG') {
+        return res.status(500).json({ status: false, error: 'Email service is not configured yet.' });
+      }
+      console.error('Contact email error:', error);
+      res.status(502).json({ status: false, error: 'Failed to send email. Please try again or contact us directly.' });
     }
   },
 );
