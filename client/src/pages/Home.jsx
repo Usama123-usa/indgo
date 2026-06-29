@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Hero from '../components/Hero';
 import Marquee from '../components/Marquee';
+import ServiceSections from '../components/ServiceSections';
 import Features from '../components/Features';
 import Vision from '../components/Vision';
 
@@ -52,6 +53,7 @@ const Home = () => {
             </Helmet>
             <Hero />
             <Marquee />
+            <ServiceSections />
             <Features />
             <Vision />
         </>
