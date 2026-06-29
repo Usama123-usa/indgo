@@ -170,20 +170,16 @@ const Media = () => {
                                         role="img"
                                         aria-label={item.title}
                                         className={`absolute inset-0 bg-center transition-transform duration-700 group-hover:scale-105 ${item.id <= 3 ? 'bg-contain bg-no-repeat bg-background-dark/5 shadow-inner' : 'bg-cover'}`} style={{ backgroundImage: `url("${item.src}")` }}></div>
-                                    <div className="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-
-                                    <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 duration-300">
-                                        <div className="flex items-center gap-2 mb-3">
+                                    {/* Always-visible gradient + title */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                                        <div className="flex items-center gap-2 mb-2">
                                             <span className="bg-accent px-2.5 py-1 rounded-full text-[10px] font-black text-white uppercase tracking-tighter">{item.category}</span>
                                             <span className="text-white/80 text-xs font-medium backdrop-blur-md bg-white/10 px-2.5 py-1 rounded-full">{item.location}</span>
                                         </div>
-                                        <h2 className="text-white text-xl md:text-2xl font-black leading-tight mb-2">{item.title}</h2>
-                                        <p className="text-white/80 text-sm line-clamp-3 font-light leading-relaxed">{item.description}</p>
-                                    </div>
-
-                                    {/* Minimalist indicator for default state */}
-                                    <div className="absolute bottom-4 left-6 group-hover:opacity-0 transition-opacity duration-300">
-                                        <p className="text-indigo-900/60 dark:text-white/60 font-bold text-sm tracking-tight">{item.title}</p>
+                                        <h2 className="text-white text-lg md:text-xl font-black leading-tight mb-1">{item.title}</h2>
+                                        {/* Description visible on hover */}
+                                        <p className="text-white/80 text-sm line-clamp-2 font-light leading-relaxed max-h-0 overflow-hidden group-hover:max-h-20 transition-all duration-300">{item.description}</p>
                                     </div>
                                 </div>
                             </div>
