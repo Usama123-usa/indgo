@@ -19,8 +19,8 @@ const Marquee = () => {
                                 <div className="flex items-center justify-center bg-indigo-50 w-48 h-24 rounded-lg border border-indigo-100 grayscale hover:grayscale-0 transition-all duration-300">
                                     <span className="text-2xl font-bold text-gray-800">HUAWEI</span>
                                 </div>
-                                <div className="flex items-center justify-center bg-indigo-50 w-48 h-24 rounded-lg border border-indigo-100 grayscale hover:grayscale-0 transition-all duration-300">
-                                    <span className="text-2xl font-bold text-blue-600">CAMEL ENERGY</span>
+                                <div className="flex items-center justify-center bg-indigo-50 w-56 h-24 rounded-lg border border-indigo-100 grayscale hover:grayscale-0 transition-all duration-300 px-3">
+                                    <span className="text-xl font-bold text-blue-600 text-center leading-tight">CAMEL ENERGY</span>
                                 </div>
                                 <div className="flex items-center justify-center bg-indigo-50 w-48 h-24 rounded-lg border border-indigo-100 grayscale hover:grayscale-0 transition-all duration-300">
                                     <span className="text-2xl font-bold text-[#ea0029]">JA SOLAR</span>

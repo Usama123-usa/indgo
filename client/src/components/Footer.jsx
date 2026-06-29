@@ -53,7 +53,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="border-t border-indigo-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-400 text-sm">© 2024 INDIGOST Group Pakistan. All rights reserved.</p>
+                    <p className="text-gray-400 text-sm">© {new Date().getFullYear()} INDIGOST Group Pakistan. All rights reserved.</p>
                     <div className="flex gap-6">
                         <Link className="text-gray-400 hover:text-primary text-sm" to="/privacy">Privacy Policy</Link>
                         <Link className="text-gray-400 hover:text-primary text-sm" to="/terms">Terms of Service</Link>

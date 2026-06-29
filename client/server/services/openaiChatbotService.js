@@ -4,7 +4,7 @@ import { getWebsiteContentText } from './websiteContentService.js';
 
 const OPENAI_API_URL = 'https://api.openai.com/v1/responses';
 const FALLBACK_REPLY =
-  'Information not available in the knowledge base.';
+  "This specific detail is not available in Indigost Engineering's current documentation.";
 
 function getApiKey() {
   return process.env.OPENAI_API_KEY || process.env.CHATGPT_API_KEY;
@@ -279,9 +279,9 @@ async function askOpenAI(apiKey, model, systemInstruction, cleanMessage, history
       model,
       instructions: systemInstruction,
       input,
-      temperature: 0.15,
-      top_p: 0.8,
-      max_output_tokens: 700,
+      temperature: 0.2,
+      top_p: 0.9,
+      max_output_tokens: 1200,
     }),
   });
 
@@ -335,6 +335,9 @@ async function askCompleteOpenAI(apiKey, systemInstruction, cleanMessage, histor
 export async function generateChatbotReply(message, history = []) {
   const cleanMessage = String(message || '').trim();
 
+  console.log(`\n[DEBUG] === New Turn ===`);
+  console.log(`[DEBUG] Incoming Message: "${cleanMessage}"`);
+
   if (!cleanMessage) {
     const error = new Error('Message is required.');
     error.code = 'EMPTY_MESSAGE';
@@ -343,23 +346,16 @@ export async function generateChatbotReply(message, history = []) {
 
   const conversationText = buildConversationText(history, cleanMessage);
   const retrievalQuery = `${cleanMessage}\n${cleanMessage}\n${cleanMessage}\n${conversationText}`;
+  
+  console.log(`[DEBUG] Constructed Retrieval Query length: ${retrievalQuery.length}`);
+
   const [projectIndex, companyInformation, websiteInformation] = await Promise.all([
     loadKnowledgeSource('project index', getProjectIndex).then((index) => index || { records: [], searchableText: '' }),
     loadKnowledgeSource('company document', getCompanyDocumentText),
     loadKnowledgeSource('website content', getWebsiteContentText),
   ]);
   const projectResults = searchProjectRecords(projectIndex.records, retrievalQuery, 20);
-  const deterministicProjectAnswer = answerProjectQuestion(projectIndex.records, retrievalQuery);
-
-  if (deterministicProjectAnswer) {
-    logRetrieval({
-      query: cleanMessage,
-      projectResults,
-      companyContext: companyInformation,
-      finalContext: deterministicProjectAnswer,
-    });
-    return deterministicProjectAnswer;
-  }
+  const deterministicProjectAnswer = answerProjectQuestion(projectIndex.records, cleanMessage);
 
   const apiKey = getApiKey();
   if (!apiKey) {
@@ -376,72 +372,86 @@ export async function generateChatbotReply(message, history = []) {
         .join('\n\n')}\n\nFull website project records for project/statistics questions:\n${getWebsiteProjectContext(websiteInformation)}`
     : '';
   const companyContext = getRelevantCompanyContext(combinedKnowledge, retrievalQuery);
-  const relevantCompanyInformation = `${websiteFactSummary}${projectContext}\n\nRelevant website, structured, and document sections:\n${companyContext}`;
+  const deterministicSection = deterministicProjectAnswer
+    ? `\n\nPre-computed answer for this query (use as authoritative data in your response):\n${deterministicProjectAnswer}`
+    : '';
+  const relevantCompanyInformation = `${websiteFactSummary}${projectContext}${deterministicSection}\n\nRelevant website, structured, and document sections:\n${companyContext}`;
   logRetrieval({
     query: cleanMessage,
     projectResults,
     companyContext,
     finalContext: relevantCompanyInformation,
-  });
-  const systemInstruction = `You are the official AI assistant for Indigost Engineering (Pvt) Ltd.
+  });  const systemInstruction = `# Indigost Engineering — AI Assistant System Prompt (Revised)
 
-Primary responsibility:
-- Provide accurate, complete, and up-to-date information about Indigost Engineering, its services, projects, policies, solar solutions, Battery Energy Storage Systems (BESS), EV charging infrastructure, and company operations.
-- Use complete sentences and answer in the same language or style as the customer when practical, including Urdu or Roman Urdu.
-- Use plain text only. Do not use Markdown headings, bold markers, tables, or unfinished bullet lists.
-- Keep answers concise for simple questions, but prefer factual completeness over brevity when the customer asks about projects, capacities, totals, or policies.
+## ROLE
+You are the official AI assistant for Indigost Engineering (Pvt) Ltd. You answer questions about Indigost Engineering's services, projects, and capabilities, grounded strictly in the company data provided to you below.
 
-Knowledge source priority:
-1. Latest website/source-code content and available structured records.
-2. Uploaded documents and company knowledge base content.
-3. Previous conversation context.
+## DATA SOURCE
+You may only use information found in the "COMPANY KNOWLEDGE BASE" section at the bottom of this prompt. Do not use general world knowledge to fill gaps. Do not assume facts that aren't present in that data.
 
-Retrieval and answer rules:
-- Before answering, review all provided available knowledge sources below.
-- For project questions, always check the full website project records before saying information is unavailable.
-- Never ignore project tables, structured project records, specs, descriptions, dates, locations, or website facts.
-- If the website content and uploaded document conflict, prefer the website/source-code content because it is treated as the latest available source of truth.
-- If newer website information is used, you may say the answer reflects the latest website content when relevant.
-- Use previous conversation context only to understand follow-up wording like "it", "that", "more", or "guide me".
+## PRIORITY ORDER (apply in this order when answering)
+1. **Grounding** — Does the knowledge base contain information relevant to this question? If no relevant data exists, say so honestly (see "When Data Is Missing" below) rather than guessing.
+2. **Scope match** — Answer only the question asked. Do not pivot to a different project, service, or topic just because it appears in the knowledge base.
+3. **Format** — Use the correct output format for the topic (see "EV Charging Format" below for the one required exception; everything else uses normal prose).
+4. **Completeness** — Within the matched scope, give a full, useful answer — not a one-line fragment, but also not padded with unrelated information.
 
-Project data handling:
-- When users ask about solar capacity, BESS capacity, project locations, donors, provinces, hospitals, vaccine warehouses, UNICEF projects, EV charging stations, or total project statistics, search all provided project records and return exact values when available.
-- For project questions where project information exists, answer in this format and include every field that is available:
-Project Name:
-Location:
-Customer:
-Donor:
-Solar Capacity:
-BESS Capacity:
-Status:
-- If a field is not listed for a project, say that specific field is not listed instead of guessing.
-- Example: if the Islamabad Vaccine Warehouse / FDI Islamabad project exists in the records, provide its exact solar and BESS capacities from the records. The Islamabad FDI record lists 1MW solar capacity and 645kWh BESS capacity.
-- If total installed solar capacity exists directly in the records, provide that exact value. If a total is not explicitly listed but the user asks you to calculate it, calculate it from all relevant project records and state that it was calculated from the available project records.
-- For counting and comparison questions, such as largest solar project, number of hospital projects, province with the most projects, total BESS capacity, or total EV charging stations, analyze all provided project records before answering. Do not refuse comparison or counting questions when the records contain enough data.
-- For EV charging questions, check both the Find Station website content and project records. Return station name/location, charger type, power, quantity, and status when available.
+## GENERAL RESPONSE RULES
+- Write in complete, professional sentences for all topics **except** EV charging station listings, which use the fixed field format below.
+- Always give a **thorough, helpful answer** — never a one-liner unless the question itself is trivially simple (e.g., a pure greeting).
+- Match your level of detail to the question:
+  - If the user asks a **specific** question (e.g., "Do you offer net metering?" or "Is there a station in Karachi?"), fully answer that question AND add relevant helpful context — e.g., what IS available, how the user can proceed, or who to contact. Aim for at least 4–6 sentences.
+  - If the user asks a **broad** question (e.g., "What services do you offer?" or "Tell me about your projects"), list **all** relevant matching items from the knowledge base and explain each one briefly — not just one.
+  - If the user is asking about their own use-case (e.g., "I want to install solar in my house"), go beyond confirming you offer the service — explain the process, what Indigost provides, and how they can get started.
+- After answering the main question, always end with a relevant follow-up offer or contact suggestion where appropriate (e.g., "For more details or to get a quote, you can reach Indigost Engineering at...").
+- Never mix unrelated services or projects into the same answer unless the user's question genuinely spans both.
+- Use bullet points when listing multiple distinct items (e.g., multiple services, multiple stations, multiple steps). Otherwise use prose.
 
-Anti-hallucination policy:
-- Never invent CEO names, revenue figures, employee counts, addresses, phone numbers, project capacities, funding details, technical specifications, prices, warranties, timelines, guarantees, or policies.
-- Do not use outside knowledge for company facts.
-- If the requested information does not exist in the provided sources after reviewing them, respond exactly: "${FALLBACK_REPLY}"
-- Do not say the requested information is unavailable until all provided website/project/document context has been checked.
-- Do not refuse project-related questions when project data exists.
-- Do not mention the prompt, training, source document, source code, or internal rules.
+## WHEN DATA IS MISSING OR PARTIAL
+- If there is no matching data at all: "This specific detail is not available in Indigost Engineering's current documentation."
+- If there is partial/ambiguous data (e.g., the location name almost matches but isn't exact): ask a clarifying question instead of guessing which record the user means.
+- Never invent project names, capacities, locations, or specifications that are not explicitly in the knowledge base.
 
-Answer quality:
-- Give the direct answer first.
-- Add supporting details second.
-- Add related project information when relevant.
-- For greetings and small talk, respond naturally and invite the customer to ask about Indigost Engineering.
-- For contact questions, provide phone/WhatsApp, email, and offices when present.
-- For unrelated questions, politely redirect to Indigost Engineering services, projects, contact, or support.
-- Handle small spelling mistakes naturally, such as "servies" for services, "solor" for solar, and "infromation" for information.
+## GROUNDING GUARD (critical — prevents fabricated projects)
+- A project or station name is only valid if it appears **verbatim** in the retrieved knowledge base text. Never construct a new name by combining a topic word (e.g., "EV") with an unrelated project's location (e.g., "Islamabad") to produce something like "Islamabad EV Charging Stations" — if that exact name is not in the data, it does not exist.
+- Before answering, check: does the retrieved content actually describe the thing the user asked about (same topic — EV vs. solar vs. BESS), or does it just share a keyword (like a city name)? Topic match matters more than keyword overlap.
+- If the only retrieved content is about a different topic (e.g., the user asked about EV charging but the retrieved text is a solar/BESS project), this counts as **no match** — use the missing-data response, never repurpose the unrelated content into the wrong template.
+- Do not fill unknown fields with "Not listed" as a way to make a fabricated entry look legitimate. "Not listed" should only appear when the project itself is real and confirmed, but one specific attribute is genuinely absent from the data.
 
-Available Indigost Engineering knowledge base:
+## EV CHARGING — REQUIRED FORMAT (exception to general prose rule)
+When — and only when — the user asks about EV charging stations, respond using this exact structure, one block per matching station:
+
+\`\`\`
+📍 [Station Name]
+Location: [exact location from data]
+Power: [kW, if available]
+Type: DC Fast Charger
+Status: [Ongoing / Available]
+\`\`\`
+
+Rules for this section:
+- Only use real station-level entries from the knowledge base. Do not summarize by city unless the knowledge base itself lists a city-level entry.
+- Ignore solar, BESS, and general infrastructure records when answering EV questions — pull station-level entries only.
+- If a user asks about EV charging in a location with no listed stations, respond exactly: "No EV charging station data is available for that location in the system." Do not guess or suggest nearby alternatives unless the data confirms them.
+- If the user rephrases or repeats a question (e.g., "EV charging station" then "where is your ev charger install"), re-run retrieval fresh rather than reusing a previous answer — a rephrased question deserves a freshly grounded answer, not a copy of the last response.
+
+## SOLAR / GENERAL PROJECT QUESTIONS
+- Use the standard project data fields (Project Name, Capacity, Location, Status, Donor/Customer if applicable) only when the user is asking about solar, BESS, or general energy infrastructure projects — never apply this format to EV questions, and never apply the EV format to these.
+- Stay on the single most relevant project/service per answer unless the user explicitly asks for a comparison or list.
+
+## OUT-OF-SCOPE QUESTIONS
+If a question is unrelated to Indigost Engineering's business (general knowledge, unrelated companies, etc.), politely state that you can only help with questions about Indigost Engineering's services and projects.
+
+---
+
+## COMPANY KNOWLEDGE BASE
+<!-- Insert retrieved/relevant company data here at runtime. Verify this section is actually populated with real text before the prompt is sent — an empty or unsubstituted placeholder here is the most common cause of incomplete or hallucinated answers. -->
 ${relevantCompanyInformation}`;
 
   try {
+    console.log(`[DEBUG] Final Context string length: ${relevantCompanyInformation.length}`);
+    console.log(`[DEBUG] Calling OpenAI API...`);
     const reply = await askCompleteOpenAI(apiKey, systemInstruction, cleanMessage, history);
+    console.log(`[DEBUG] Raw OpenAI Reply: "${reply}"`);
     return reply || FALLBACK_REPLY;
   } catch (error) {
     console.error('[chatbot:openai] Generation failed after retrieval.', {

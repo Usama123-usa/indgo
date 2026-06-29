@@ -14,7 +14,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="flex items-center justify-between h-24">
                     <Link to="/" className="flex items-center gap-3 group cursor-pointer">
-                        <img src="/images/logo.png" alt="INDIGOST Logo" width="612" height="408" decoding="async" className="h-[120px] w-auto transition-all" />
+                        <img src="/images/logo.png" alt="INDIGOST Logo" width="612" height="408" loading="lazy" decoding="async" className="h-[120px] w-auto transition-all" />
                     </Link>
                     <div className="hidden md:flex items-center gap-8">
                         <NavLink to="/" className={getLinkClasses}>Home</NavLink>

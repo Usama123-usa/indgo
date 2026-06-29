@@ -7,6 +7,36 @@ const Contact = () => {
             <Helmet>
                 <title>Contact INDIGOST Group | Solar & EV Partnerships Pakistan</title>
                 <meta name="description" content="Get in touch with INDIGOST Group for EV charging station installations, industrial solar EPC, or BESS inquiries. Offices in Islamabad, Lahore, and Bahawalpur." />
+                <link rel="canonical" href="https://indigost.com/contact" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://indigost.com/contact" />
+                <meta property="og:site_name" content="INDIGOST Group" />
+                <meta property="og:title" content="Contact INDIGOST Group | Solar & EV Partnerships Pakistan" />
+                <meta property="og:description" content="Get in touch with INDIGOST Group for EV charging station installations, industrial solar EPC, or BESS inquiries. Offices in Islamabad, Lahore, and Bahawalpur." />
+                <meta property="og:image" content="https://indigost.com/images/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Contact INDIGOST Group | Solar & EV Partnerships Pakistan" />
+                <meta name="twitter:description" content="Get in touch with INDIGOST Group for EV charging station installations, industrial solar EPC, or BESS inquiries. Offices in Islamabad, Lahore, and Bahawalpur." />
+                <meta name="twitter:image" content="https://indigost.com/images/logo.png" />
+                <script type="application/ld+json">{JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "LocalBusiness",
+                    "name": "INDIGOST Group",
+                    "url": "https://indigost.com",
+                    "logo": "https://indigost.com/images/logo.png",
+                    "telephone": "+92-300-9358751",
+                    "email": "info@indigostsolar.com",
+                    "address": [
+                        {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Office # 203, 2nd Floor, Al-Hafeez Heights, Gulberg III",
+                            "addressLocality": "Lahore",
+                            "addressCountry": "PK"
+                        }
+                    ],
+                    "areaServed": { "@type": "Country", "name": "Pakistan" },
+                    "sameAs": ["https://indigost.com"]
+                })}</script>
             </Helmet>
             <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary opacity-20 filter blur-[80px] animate-blob"></div>
             <div className="absolute bottom-0 right-0 translate-x-1/3 translate-y-1/3 w-80 h-80 rounded-full bg-secondary opacity-20 filter blur-[80px] animate-blob animation-delay-2000"></div>

@@ -289,87 +289,42 @@ const Projects = () => {
         },
         {
             id: 21,
-            title: "Islamabad EV Charging Stations",
-            location: "Islamabad",
-            date: "2024",
+            title: "M-2 Motorway - Sial Rest Area",
+            location: "M-2 Southbound/Northbound, Sial Service Area",
+            date: "Ongoing",
             category: "EV Charging",
-            description: "Islamabad has three EV charging stations, each with a capacity of 215 kW. These fast chargers provide quick and efficient charging for electric vehicles. They help reduce waiting time for users. This setup supports the city’s shift toward clean energy. The stations are designed for modern EV needs. They improve overall charging reliability.",
+            description: "INDIGOST operates a DC fast charging station at the Sial Service Area on the M-2 Motorway. The station is available for EV users traveling on the southbound and northbound route.",
             specs: [
-                { icon: "ev_station", value: "215kW", label: "Power" },
-                { icon: "tag", value: "3 Stations", label: "Quantity" },
-                { icon: "bolt", value: "Fast", label: "Type" }
+                { icon: "bolt", value: "240kW", label: "Power" },
+                { icon: "electric_car", value: "DC Fast Charger", label: "Type" }
             ],
             image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCEdECVrMnuNaEkWcqw_pt0loqlkrS2Hygc-I1-0_sfdatB9_dYgHt4Z2aZLJGeYQFdoIwu-qQ1UhquHM-rKkgIudl1zeR38UVeKqSgJw1hYo8B_-mtlOA8Y6Rapt9RQYI93gdcH-dS6Mz_Yr84tl9fp0r_FJxPh0xBo0igY9JX9jScyz9gODlC6GQhaWU-rvglqIXEgAYgDr7gvb765aCsZLn6poib_xfnBU7cOyIDpElvdgWcPlsbepWvYnzSP17sLqbBvwBUrqM"
         },
         {
             id: 22,
-            title: "Lahore EV Charging Stations",
-            location: "Lahore, Punjab",
-            date: "2024",
+            title: "M-2 Motorway - Kallar Kahar Rest Area",
+            location: "M-2 Southbound/Northbound, Kallar Kahar Service Area",
+            date: "Ongoing",
             category: "EV Charging",
-            description: "Lahore is equipped with two EV charging stations, both operating at 215 kW. These stations offer high-speed charging for daily EV users. They improve accessibility across the city. This infrastructure promotes eco-friendly transportation. The chargers meet international standards. They ensure consistent performance.",
+            description: "INDIGOST operates a DC fast charging station at the Kallar Kahar Service Area on the M-2 Motorway. The station is available for EV users traveling on the southbound and northbound route.",
             specs: [
-                { icon: "ev_station", value: "215kW", label: "Power" },
-                { icon: "tag", value: "2 Stations", label: "Quantity" },
-                { icon: "bolt", value: "Fast", label: "Type" }
+                { icon: "bolt", value: "240kW", label: "Power" },
+                { icon: "electric_car", value: "DC Fast Charger", label: "Type" }
             ],
             image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAG0sChLVrApGYY4BX8rG4HYtJiWQaB9ekZtzOlsr5_G96t_mWr4Lu54gSnLJLwBn6pw_RFIsW2SHbJ4vi84UxB-w8hBXzrlghPYWFvTAQMuqT2JzBNgldMUIPSvA05pJHJxkaSCj0c5rZkHszwMG6SNzYzwrWomSnA-gEl4JlWPjKsKmp-gbjAGYiiEvDOTErtiajF7Kc5cL8QZ2pKvySErjzJQonL10s__5NdGqx009anyLwl-74o6JeU_fRsXCrBn249qG1mqU4"
         },
         {
             id: 23,
-            title: "Dera Ali Yar EV Charging Station",
-            location: "Dera Ali Yar, Balochistan",
-            date: "2024",
+            title: "M-2 Motorway - Chakri Rest Area",
+            location: "M-2 Southbound/Northbound, Chakri Service Area",
+            date: "Ongoing",
             category: "EV Charging",
-            description: "Dera Ali Yar has one EV charging station with a power capacity of 107 kW. It provides dependable charging for electric vehicles in the area. The station supports local commuters. It helps expand EV usage in smaller cities. This facility improves energy efficiency. It strengthens local EV infrastructure.",
+            description: "INDIGOST operates a DC fast charging station at the Chakri Service Area on the M-2 Motorway. The station is available for EV users traveling on the southbound and northbound route.",
             specs: [
-                { icon: "ev_station", value: "107kW", label: "Power" },
-                { icon: "location_on", value: "City", label: "Type" },
-                { icon: "bolt", value: "Standard", label: "Speed" }
+                { icon: "bolt", value: "240kW", label: "Power" },
+                { icon: "electric_car", value: "DC Fast Charger", label: "Type" }
             ],
             image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCEdECVrMnuNaEkWcqw_pt0loqlkrS2Hygc-I1-0_sfdatB9_dYgHt4Z2aZLJGeYQFdoIwu-qQ1UhquHM-rKkgIudl1zeR38UVeKqSgJw1hYo8B_-mtlOA8Y6Rapt9RQYI93gdcH-dS6Mz_Yr84tl9fp0r_FJxPh0xBo0igY9JX9jScyz9gODlC6GQhaWU-rvglqIXEgAYgDr7gvb765aCsZLn6poib_xfnBU7cOyIDpElvdgWcPlsbepWvYnzSP17sLqbBvwBUrqM"
-        },
-        {
-            id: 24,
-            title: "Dera Murad Jamali EV Charging Station",
-            location: "Dera Murad Jamali, Balochistan",
-            date: "2024",
-            category: "EV Charging",
-            description: "In Dera Murad Jamali, one 107 kW EV charging station has been installed. It ensures safe and stable charging for EV owners. This facility increases convenience for users. It contributes to regional EV development. The station is easy to access. It supports future EV growth.",
-            specs: [
-                { icon: "ev_station", value: "107kW", label: "Power" },
-                { icon: "location_on", value: "City", label: "Type" },
-                { icon: "bolt", value: "Standard", label: "Speed" }
-            ],
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAG0sChLVrApGYY4BX8rG4HYtJiWQaB9ekZtzOlsr5_G96t_mWr4Lu54gSnLJLwBn6pw_RFIsW2SHbJ4vi84UxB-w8hBXzrlghPYWFvTAQMuqT2JzBNgldMUIPSvA05pJHJxkaSCj0c5rZkHszwMG6SNzYzwrWomSnA-gEl4JlWPjKsKmp-gbjAGYiiEvDOTErtiajF7Kc5cL8QZ2pKvySErjzJQonL10s__5NdGqx009anyLwl-74o6JeU_fRsXCrBn249qG1mqU4"
-        },
-        {
-            id: 25,
-            title: "Lower Ali EV Charging Station",
-            location: "Lower Ali",
-            date: "2024",
-            category: "EV Charging",
-            description: "Lower Ali features an EV charging station with a capacity of 107 kW. The station delivers efficient and reliable charging services. It supports local EV drivers. The station encourages sustainable mobility. This charger reduces charging downtime. It improves user confidence.",
-            specs: [
-                { icon: "ev_station", value: "107kW", label: "Power" },
-                { icon: "location_on", value: "Local", label: "Type" },
-                { icon: "bolt", value: "Standard", label: "Speed" }
-            ],
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCEdECVrMnuNaEkWcqw_pt0loqlkrS2Hygc-I1-0_sfdatB9_dYgHt4Z2aZLJGeYQFdoIwu-qQ1UhquHM-rKkgIudl1zeR38UVeKqSgJw1hYo8B_-mtlOA8Y6Rapt9RQYI93gdcH-dS6Mz_Yr84tl9fp0r_FJxPh0xBo0igY9JX9jScyz9gODlC6GQhaWU-rvglqIXEgAYgDr7gvb765aCsZLn6poib_xfnBU7cOyIDpElvdgWcPlsbepWvYnzSP17sLqbBvwBUrqM"
-        },
-        {
-            id: 26,
-            title: "Karachi EV Charging Station",
-            location: "Karachi, Sindh",
-            date: "2024",
-            category: "EV Charging",
-            description: "Karachi has one high-power EV charging station rated at 215 kW. It offers fast and efficient charging in a high-demand city. The station reduces charging delays. It supports the growing EV network in Karachi. It handles heavy usage smoothly. It strengthens urban EV infrastructure.",
-            specs: [
-                { icon: "ev_station", value: "215kW", label: "Power" },
-                { icon: "tag", value: "1 Station", label: "Quantity" },
-                { icon: "bolt", value: "Fast", label: "Type" }
-            ],
-            image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAG0sChLVrApGYY4BX8rG4HYtJiWQaB9ekZtzOlsr5_G96t_mWr4Lu54gSnLJLwBn6pw_RFIsW2SHbJ4vi84UxB-w8hBXzrlghPYWFvTAQMuqT2JzBNgldMUIPSvA05pJHJxkaSCj0c5rZkHszwMG6SNzYzwrWomSnA-gEl4JlWPjKsKmp-gbjAGYiiEvDOTErtiajF7Kc5cL8QZ2pKvySErjzJQonL10s__5NdGqx009anyLwl-74o6JeU_fRsXCrBn249qG1mqU4"
         }
     ];
 
@@ -382,6 +337,17 @@ const Projects = () => {
             <Helmet>
                 <title>Solar & EV Projects in Pakistan | INDIGOST Case Studies</title>
                 <meta name="description" content="Explore our nationwide impact: 2.3MW PV solar installations, UNICEF-funded BESS projects, and motorway EV charging hubs across Pakistan." />
+                <link rel="canonical" href="https://indigost.com/projects" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://indigost.com/projects" />
+                <meta property="og:site_name" content="INDIGOST Group" />
+                <meta property="og:title" content="Solar & EV Projects in Pakistan | INDIGOST Case Studies" />
+                <meta property="og:description" content="Explore our nationwide impact: 2.3MW PV solar installations, UNICEF-funded BESS projects, and motorway EV charging hubs across Pakistan." />
+                <meta property="og:image" content="https://indigost.com/images/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Solar & EV Projects in Pakistan | INDIGOST Case Studies" />
+                <meta name="twitter:description" content="Explore our nationwide impact: 2.3MW PV solar installations, UNICEF-funded BESS projects, and motorway EV charging hubs across Pakistan." />
+                <meta name="twitter:image" content="https://indigost.com/images/logo.png" />
             </Helmet>
             <main className="flex flex-col w-full min-h-screen">
                 {/* Hero Section */}

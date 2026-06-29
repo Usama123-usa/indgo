@@ -109,6 +109,17 @@ const Media = () => {
             <Helmet>
                 <title>Media & News | INDIGOST Group Green Energy Updates</title>
                 <meta name="description" content="Latest photos and news from INDIGOST Group. See our EV charging inaugurations, presidential site inspections, and infrastructure milestones in Pakistan." />
+                <link rel="canonical" href="https://indigost.com/media" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://indigost.com/media" />
+                <meta property="og:site_name" content="INDIGOST Group" />
+                <meta property="og:title" content="Media & News | INDIGOST Group Green Energy Updates" />
+                <meta property="og:description" content="Latest photos and news from INDIGOST Group. See our EV charging inaugurations, presidential site inspections, and infrastructure milestones in Pakistan." />
+                <meta property="og:image" content="https://indigost.com/images/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Media & News | INDIGOST Group Green Energy Updates" />
+                <meta name="twitter:description" content="Latest photos and news from INDIGOST Group. See our EV charging inaugurations, presidential site inspections, and infrastructure milestones in Pakistan." />
+                <meta name="twitter:image" content="https://indigost.com/images/logo.png" />
             </Helmet>
             <main className="w-full">
                 <section className="relative w-full overflow-hidden">

@@ -49,6 +49,53 @@ const FindStation = () => {
             <Helmet>
                 <title>Find EV Charging Station Pakistan | M-2 Motorway Fast Chargers</title>
                 <meta name="description" content="Locate INDIGOST 240kW ultra-fast EV charging stations along the M-2 Motorway (Sial, Kallar Kahar, Chakri). Plan your electric journey across Pakistan." />
+                <link rel="canonical" href="https://indigost.com/find-station" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://indigost.com/find-station" />
+                <meta property="og:site_name" content="INDIGOST Group" />
+                <meta property="og:title" content="Find EV Charging Station Pakistan | M-2 Motorway Fast Chargers" />
+                <meta property="og:description" content="Locate INDIGOST 240kW ultra-fast EV charging stations along the M-2 Motorway (Sial, Kallar Kahar, Chakri). Plan your electric journey across Pakistan." />
+                <meta property="og:image" content="https://indigost.com/images/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Find EV Charging Station Pakistan | M-2 Motorway Fast Chargers" />
+                <meta name="twitter:description" content="Locate INDIGOST 240kW ultra-fast EV charging stations along the M-2 Motorway (Sial, Kallar Kahar, Chakri). Plan your electric journey across Pakistan." />
+                <meta name="twitter:image" content="https://indigost.com/images/logo.png" />
+                <script type="application/ld+json">{JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "ItemList",
+                    "name": "INDIGOST EV Charging Stations — M-2 Motorway",
+                    "url": "https://indigost.com/find-station",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "item": {
+                                "@type": "LocalBusiness",
+                                "name": "INDIGOST EV Charging — Sial Service Area",
+                                "description": "240kW DC Fast Charger on M-2 Motorway at Sial Service Area",
+                                "geo": { "@type": "GeoCoordinates", "latitude": 32.0645, "longitude": 73.1687 }
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "item": {
+                                "@type": "LocalBusiness",
+                                "name": "INDIGOST EV Charging — Kallar Kahar Service Area",
+                                "description": "240kW DC Fast Charger on M-2 Motorway at Kallar Kahar Service Area"
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "item": {
+                                "@type": "LocalBusiness",
+                                "name": "INDIGOST EV Charging — Chakri Service Area",
+                                "description": "240kW DC Fast Charger on M-2 Motorway at Chakri Service Area"
+                            }
+                        }
+                    ]
+                })}</script>
             </Helmet>
             {/* Hero Section */}
             <section className="bg-deep-indigo text-white py-16 px-6 lg:px-8 relative overflow-hidden">

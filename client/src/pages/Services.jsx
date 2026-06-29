@@ -8,6 +8,37 @@ const Services = () => {
             <Helmet>
                 <title>Solar & EV Services in Pakistan | INDIGOST Group</title>
                 <meta name="description" content="Explore our comprehensive energy services: EV station installation, industrial solar integration, and 24/7 smart maintenance for BESS and PV systems in Pakistan." />
+                <link rel="canonical" href="https://indigost.com/services" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://indigost.com/services" />
+                <meta property="og:site_name" content="INDIGOST Group" />
+                <meta property="og:title" content="Solar & EV Services in Pakistan | INDIGOST Group" />
+                <meta property="og:description" content="Explore our comprehensive energy services: EV station installation, industrial solar integration, and 24/7 smart maintenance for BESS and PV systems in Pakistan." />
+                <meta property="og:image" content="https://indigost.com/images/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Solar & EV Services in Pakistan | INDIGOST Group" />
+                <meta name="twitter:description" content="Explore our comprehensive energy services: EV station installation, industrial solar integration, and 24/7 smart maintenance for BESS and PV systems in Pakistan." />
+                <meta name="twitter:image" content="https://indigost.com/images/logo.png" />
+                <script type="application/ld+json">{JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "serviceType": "Energy Infrastructure",
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "INDIGOST Group",
+                        "url": "https://indigost.com"
+                    },
+                    "hasOfferCatalog": {
+                        "@type": "OfferCatalog",
+                        "name": "Energy Services",
+                        "itemListElement": [
+                            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "EV Charging Station Installation" } },
+                            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Industrial Solar Integration" } },
+                            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Smart Maintenance for BESS and PV Systems" } }
+                        ]
+                    },
+                    "areaServed": { "@type": "Country", "name": "Pakistan" }
+                })}</script>
             </Helmet>
             <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px]"></div>

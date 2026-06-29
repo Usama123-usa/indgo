@@ -114,6 +114,17 @@ const Products = () => {
             <Helmet>
                 <title>EV Charging Stations & Solar Products Pakistan | INDIGOST</title>
                 <meta name="description" content="Browse INDIGOST's range of premium EV charging stations, solar batteries, BESS solutions and industrial solar components designed for the Pakistan market." />
+                <link rel="canonical" href="https://indigost.com/products" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://indigost.com/products" />
+                <meta property="og:site_name" content="INDIGOST Group" />
+                <meta property="og:title" content="EV Charging Stations & Solar Products Pakistan | INDIGOST" />
+                <meta property="og:description" content="Browse INDIGOST's range of premium EV charging stations, solar batteries, BESS solutions and industrial solar components designed for the Pakistan market." />
+                <meta property="og:image" content="https://indigost.com/images/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="EV Charging Stations & Solar Products Pakistan | INDIGOST" />
+                <meta name="twitter:description" content="Browse INDIGOST's range of premium EV charging stations, solar batteries, BESS solutions and industrial solar components designed for the Pakistan market." />
+                <meta name="twitter:image" content="https://indigost.com/images/logo.png" />
             </Helmet>
             <main className="relative flex flex-col items-center w-full min-h-screen pb-20 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-radial from-primary/10 to-transparent opacity-70 pointer-events-none -z-10"></div>

@@ -1,7 +1,25 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Terms = () => {
     return (
+        <>
+        <Helmet>
+            <title>Terms & Conditions | INDIGOST Group</title>
+            <meta name="description" content="Review the terms and conditions governing your use of INDIGOST Group's website, services, and intellectual property under the laws of Pakistan." />
+            <meta name="robots" content="noindex, follow" />
+            <link rel="canonical" href="https://indigost.com/terms" />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://indigost.com/terms" />
+            <meta property="og:site_name" content="INDIGOST Group" />
+            <meta property="og:title" content="Terms & Conditions | INDIGOST Group" />
+            <meta property="og:description" content="Review the terms and conditions governing your use of INDIGOST Group's website, services, and intellectual property under the laws of Pakistan." />
+            <meta property="og:image" content="https://indigost.com/images/logo.png" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Terms & Conditions | INDIGOST Group" />
+            <meta name="twitter:description" content="Review the terms and conditions governing your use of INDIGOST Group's website, services, and intellectual property under the laws of Pakistan." />
+            <meta name="twitter:image" content="https://indigost.com/images/logo.png" />
+        </Helmet>
         <div className="bg-background-light text-text-main font-display selection:bg-accent selection:text-white dark:bg-background-dark dark:text-white pt-10 pb-20">
             <div className="max-w-4xl mx-auto px-6 lg:px-8">
                 <h1 className="text-4xl md:text-5xl font-black mb-8 text-deep-indigo dark:text-white">Terms & Conditions</h1>
@@ -44,6 +62,7 @@ const Terms = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

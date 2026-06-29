@@ -8,6 +8,17 @@ const About = () => {
             <Helmet>
                 <title>About INDIGOST Group | Pakistan's Solar & EV Pioneers</title>
                 <meta name="description" content="Established in 2015, INDIGOST Group is a leader in Engineering, Procurement, and Construction (EPC) for solar energy and EV charging infrastructure in Pakistan." />
+                <link rel="canonical" href="https://indigost.com/about" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://indigost.com/about" />
+                <meta property="og:site_name" content="INDIGOST Group" />
+                <meta property="og:title" content="About INDIGOST Group | Pakistan's Solar & EV Pioneers" />
+                <meta property="og:description" content="Established in 2015, INDIGOST Group is a leader in Engineering, Procurement, and Construction (EPC) for solar energy and EV charging infrastructure in Pakistan." />
+                <meta property="og:image" content="https://indigost.com/images/logo.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="About INDIGOST Group | Pakistan's Solar & EV Pioneers" />
+                <meta name="twitter:description" content="Established in 2015, INDIGOST Group is a leader in Engineering, Procurement, and Construction (EPC) for solar energy and EV charging infrastructure in Pakistan." />
+                <meta name="twitter:image" content="https://indigost.com/images/logo.png" />
             </Helmet>
             {/* Hero Section */}
             <div className="relative w-full">

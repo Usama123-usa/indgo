@@ -291,9 +291,16 @@ export async function getProjectIndex() {
 }
 
 export function searchProjectRecords(records, query, limit = 20) {
+  const stopWords = new Set([
+    'a', 'an', 'and', 'are', 'can', 'do', 'for', 'give', 'how', 'i', 'is', 'me', 'of', 'our', 
+    'please', 'tell', 'the', 'to', 'what', 'your', 'you', 'us', 'about', 'okay', 'perfect', 
+    'now', 'with', 'from', 'that', 'this', 'have', 'has', 'was', 'were', 'been', 'being',
+    'will', 'would', 'could', 'should', 'which', 'who', 'whom', 'whose', 'where', 'when', 'why'
+  ]);
+
   const terms = normalizeText(query)
     .split(' ')
-    .filter((term) => term.length > 2);
+    .filter((term) => term.length > 2 && !stopWords.has(term));
 
   if (!terms.length) {
     return records.slice(0, limit).map((project) => ({ project, score: 1 }));
@@ -324,8 +331,19 @@ function findSpecificProject(records, query) {
     }
   }
 
-  const results = searchProjectRecords(records, query, 5);
-  return results[0]?.score >= 8 ? results[0].project : null;
+  // The previous generic fallback here (searchProjectRecords + score >= 8 threshold)
+  // scored messages against each project's full field text, including literal
+  // labels like "Project Name:" and "Solar Capacity:". Because words like "project"
+  // and "solar" appear in nearly every record purely from those labels, almost any
+  // business-related question trivially cleared the threshold and was treated as a
+  // request for one specific project — short-circuiting broad/conversational
+  // questions (e.g. "are you working on solar like house base small project") into
+  // a single, often-irrelevant raw record dump instead of reaching the AI model.
+  // Removed so that only the narrow, intentional exact match above (and the
+  // aggregate computations in answerProjectQuestion) bypass the model. Everything
+  // else now falls through to the AI model, which already receives full retrieved
+  // project context via projectContext in openaiChatbotService.js.
+  return null;
 }
 
 function formatProjectAnswer(project) {
