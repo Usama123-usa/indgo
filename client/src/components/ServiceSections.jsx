@@ -48,11 +48,11 @@ const sections = [
         tagColor: 'text-amber-600 bg-amber-50 border-amber-200',
         heading: 'Industrial & Residential',
         headingAccent: 'Solar Solutions',
-        description: 'From rooftop home systems to multi-megawatt industrial PV plants, INDIGOST delivers full EPC — engineering, procurement, and construction — with net metering support and long-term O&M contracts across all of Pakistan.',
+        description: 'From rooftop home systems to multi-megawatt industrial PV plants, INDIGOST delivers full EPCengineering, procurement, and constructionwith net metering support and long-term O&M contracts across all of Pakistan.',
         bullets: [
             { icon: 'home', text: 'Residential & commercial rooftop solar' },
             { icon: 'factory', text: 'Industrial PV plants up to 2.3 MWp+' },
-            { icon: 'engineering', text: 'Full EPC model — design to commissioning' },
+            { icon: 'engineering', text: 'Full EPC modeldesign to commissioning' },
             { icon: 'build', text: 'Operation & maintenance contracts' },
         ],
         cta: { label: 'Our Services', to: '/services' },
@@ -142,7 +142,7 @@ const ServiceSections = () => {
                         </div>
                     </div>
 
-                    {/* Divider — skip on last section */}
+                    {/* Dividerskip on last section */}
                     {idx < sections.length - 1 && (
                         <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-20">
                             <div className="border-b border-indigo-100" />

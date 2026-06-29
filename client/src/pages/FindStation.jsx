@@ -63,7 +63,7 @@ const FindStation = () => {
                 <script type="application/ld+json">{JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "ItemList",
-                    "name": "INDIGOST EV Charging Stations — M-2 Motorway",
+                    "name": "INDIGOST EV Charging StationsM-2 Motorway",
                     "url": "https://indigost.com/find-station",
                     "itemListElement": [
                         {
@@ -71,7 +71,7 @@ const FindStation = () => {
                             "position": 1,
                             "item": {
                                 "@type": "LocalBusiness",
-                                "name": "INDIGOST EV Charging — Sial Service Area",
+                                "name": "INDIGOST EV ChargingSial Service Area",
                                 "description": "240kW DC Fast Charger on M-2 Motorway at Sial Service Area",
                                 "geo": { "@type": "GeoCoordinates", "latitude": 32.0645, "longitude": 73.1687 }
                             }
@@ -81,7 +81,7 @@ const FindStation = () => {
                             "position": 2,
                             "item": {
                                 "@type": "LocalBusiness",
-                                "name": "INDIGOST EV Charging — Kallar Kahar Service Area",
+                                "name": "INDIGOST EV ChargingKallar Kahar Service Area",
                                 "description": "240kW DC Fast Charger on M-2 Motorway at Kallar Kahar Service Area"
                             }
                         },
@@ -90,7 +90,7 @@ const FindStation = () => {
                             "position": 3,
                             "item": {
                                 "@type": "LocalBusiness",
-                                "name": "INDIGOST EV Charging — Chakri Service Area",
+                                "name": "INDIGOST EV ChargingChakri Service Area",
                                 "description": "240kW DC Fast Charger on M-2 Motorway at Chakri Service Area"
                             }
                         }

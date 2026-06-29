@@ -9,7 +9,7 @@ const Features = () => {
                     <div>
                         <h2 className="text-4xl font-display font-bold text-deep-indigo mb-6">Why Choose <span className="text-primary">INDIGOST?</span></h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            Indigost is a complete clean-energy solutions company delivering end-to-end services across solar power, energy storage, EV charging, and electrical infrastructure. We don’t just install systems — we design, integrate, commission, and support them for long-term performance and reliability.
+                            Indigost is a complete clean-energy solutions company delivering end-to-end services across solar power, energy storage, EV charging, and electrical infrastructure. We don’t just install systems. We design, integrate, commission, and support them for long-term performance and reliability.
                         </p>
                         <div className="space-y-6">
                             <div className="flex gap-4 group">
