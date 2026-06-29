@@ -1,9 +1,7 @@
 {
     "functions": {
         "api/**/*.js": {
-            "includeFiles": [
-                "company information.docx"
-            ]
+            "includeFiles": "company information.docx"
         }
     },
     "rewrites": [
