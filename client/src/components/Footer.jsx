@@ -44,12 +44,41 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h4 className="font-bold text-deep-indigo mb-6">Stay Charged</h4>
-                        <p className="text-gray-500 text-sm mb-4">Get the latest updates on EV infrastructure in Pakistan.</p>
-                        <form className="flex flex-col gap-3" onSubmit={(e) => { e.preventDefault(); alert('Subscribed!'); }}>
-                            <input className="w-full h-10 px-4 rounded-lg bg-indigo-50 border border-indigo-100 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm text-deep-indigo placeholder-gray-400" placeholder="Email address" type="email" />
-                            <button className="w-full h-10 bg-deep-indigo hover:bg-primary text-white text-sm font-bold rounded-lg transition-colors shadow-md hover:shadow-lg" type="submit">Subscribe</button>
-                        </form>
+                        <h4 className="font-bold text-deep-indigo mb-6">Contact Us</h4>
+                        <ul className="space-y-4">
+                            <li>
+                                <a href="tel:+923009358751" className="flex items-center gap-3 text-gray-500 hover:text-primary text-sm transition-colors group">
+                                    <span className="shrink-0 size-8 rounded-lg bg-indigo-50 group-hover:bg-primary/10 flex items-center justify-center text-primary">
+                                        <span className="material-symbols-outlined text-[18px]">call</span>
+                                    </span>
+                                    +92 300 9358751
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/923009358751" className="flex items-center gap-3 text-gray-500 hover:text-[#25D366] text-sm transition-colors group">
+                                    <span className="shrink-0 size-8 rounded-lg bg-indigo-50 group-hover:bg-green-50 flex items-center justify-center text-primary group-hover:text-[#25D366]">
+                                        <span className="material-symbols-outlined text-[18px]">chat</span>
+                                    </span>
+                                    WhatsApp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@indigostsolar.com" className="flex items-center gap-3 text-gray-500 hover:text-primary text-sm transition-colors group">
+                                    <span className="shrink-0 size-8 rounded-lg bg-indigo-50 group-hover:bg-primary/10 flex items-center justify-center text-primary">
+                                        <span className="material-symbols-outlined text-[18px]">mail</span>
+                                    </span>
+                                    info@indigostsolar.com
+                                </a>
+                            </li>
+                            <li>
+                                <Link to="/contact" className="flex items-center gap-3 text-gray-500 hover:text-primary text-sm transition-colors group">
+                                    <span className="shrink-0 size-8 rounded-lg bg-indigo-50 group-hover:bg-primary/10 flex items-center justify-center text-primary">
+                                        <span className="material-symbols-outlined text-[18px]">send</span>
+                                    </span>
+                                    Send an Inquiry
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div className="border-t border-indigo-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
