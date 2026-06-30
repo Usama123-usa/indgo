@@ -291,7 +291,7 @@ const Projects = () => {
             id: 21,
             title: "M-2 Motorway - Sial Rest Area",
             location: "M-2 Southbound/Northbound, Sial Service Area",
-            date: "Ongoing",
+            date: "Operational",
             category: "EV Charging",
             description: "INDIGOST operates a DC fast charging station at the Sial Service Area on the M-2 Motorway. The station is available for EV users traveling on the southbound and northbound route.",
             specs: [
@@ -304,7 +304,7 @@ const Projects = () => {
             id: 22,
             title: "M-2 Motorway - Kallar Kahar Rest Area",
             location: "M-2 Southbound/Northbound, Kallar Kahar Service Area",
-            date: "Ongoing",
+            date: "Operational",
             category: "EV Charging",
             description: "INDIGOST operates a DC fast charging station at the Kallar Kahar Service Area on the M-2 Motorway. The station is available for EV users traveling on the southbound and northbound route.",
             specs: [
@@ -317,7 +317,7 @@ const Projects = () => {
             id: 23,
             title: "M-2 Motorway - Chakri Rest Area",
             location: "M-2 Southbound/Northbound, Chakri Service Area",
-            date: "Ongoing",
+            date: "Operational",
             category: "EV Charging",
             description: "INDIGOST operates a DC fast charging station at the Chakri Service Area on the M-2 Motorway. The station is available for EV users traveling on the southbound and northbound route.",
             specs: [
